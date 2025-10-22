@@ -28,7 +28,11 @@ const RegionInfo regions[] = {
     /*
         https://lora-alliance.org/wp-content/uploads/2020/11/lorawan_regional_parameters_v1.0.3reva_0.pdf
      */
+<<<<<<< HEAD
     RDEF(EU_433, 433.0f, 434.0f, 10, 0, 12, true, false, false),
+=======
+    RDEF(EU_433, 433.0f, 434.0f, 100, 0, 30, true, false, false),
+>>>>>>> f13c9f23e (yes, I know, this is very-very bad)
 
     /*
        https://www.thethingsnetwork.org/docs/lorawan/duty-cycle/
@@ -528,11 +532,11 @@ void RadioInterface::applyModemConfig()
 
     power = loraConfig.tx_power;
 
-    if ((power == 0) || ((power > myRegion->powerLimit) && !devicestate.owner.is_licensed))
-        power = myRegion->powerLimit;
+//    if ((power == 0) || ((power > myRegion->powerLimit) && !devicestate.owner.is_licensed))
+//        power = myRegion->powerLimit;
 
-    if (power == 0)
-        power = 17; // Default to this power level if we don't have a valid regional power limit (powerLimit of myRegion defaults
+//    if (power == 0)
+//        power = 17; // Default to this power level if we don't have a valid regional power limit (powerLimit of myRegion defaults
                     // to 0, currently no region has an actual power limit of 0 [dBm] so we can assume regions which have this
                     // variable set to 0 don't have a valid power limit)
 
