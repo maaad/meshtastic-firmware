@@ -28,11 +28,7 @@ const RegionInfo regions[] = {
     /*
         https://lora-alliance.org/wp-content/uploads/2020/11/lorawan_regional_parameters_v1.0.3reva_0.pdf
      */
-<<<<<<< HEAD
-    RDEF(EU_433, 433.0f, 434.0f, 10, 0, 12, true, false, false),
-=======
     RDEF(EU_433, 433.0f, 434.0f, 100, 0, 30, true, false, false),
->>>>>>> f13c9f23e (yes, I know, this is very-very bad)
 
     /*
        https://www.thethingsnetwork.org/docs/lorawan/duty-cycle/
