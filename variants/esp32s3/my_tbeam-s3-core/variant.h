@@ -13,7 +13,6 @@
 
 // TTGO uses a common pinout for their SX1262 vs RF95 modules - both can be enabled and we will probe at runtime for RF95 and if
 // not found then probe for SX1262
-#define USE_SX1262
 #define USE_SX1268
 
 #define LORA_DIO0 -1 // a No connect on the SX1262 module
@@ -22,12 +21,14 @@
 #define LORA_DIO2 4 // SX1262 BUSY
 #define LORA_DIO3   // Not connected on PCB, but internally on the TTGO SX1262, if DIO3 is high the TXCO is enabled
 
-#ifdef USE_SX1262
+#ifdef USE_SX1268
 #define SX126X_CS 10 // FIXME - we really should define LORA_CS instead
 #define SX126X_DIO1 LORA_DIO1
 #define SX126X_BUSY LORA_DIO2
 #define SX126X_RESET LORA_RESET
-
+#define SX126X_RXEN 2
+#define TCXO_OPTIONAL
+#define SX126X_MAX_POWER 22
 // Not really an E22 but TTGO seems to be trying to clone that
 #define SX126X_DIO2_AS_RF_SWITCH
 #define SX126X_DIO3_TCXO_VOLTAGE 1.8
